@@ -1,7 +1,10 @@
 
+## Install
+
+>ppip install .
 
 ## Usage
- page-reader --help
+>page-reader --help
 
 Usage: page-reader [OPTIONS] PAGE_URL
 
@@ -11,5 +14,11 @@ Usage: page-reader [OPTIONS] PAGE_URL
 Options:
   -v, --verbose
   --help         Show this message and exit.
+
+## Test coverage
+>pip install pytest coverage responses
+
+>coverage html && open htmlcov/index.html
+
 
 
