@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "page-reader"
+authors = [
+    {name = "Jan Skwierczyński", email = "jan.skwierczynski@gmail.com"},
+]
+description = "My package description"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "click",
+]
+dynamic = ["version"]
+
+[project.scripts]
+page-reader = "page_reader.cli:reader"
