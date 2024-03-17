@@ -43,3 +43,14 @@ def test_get_url_content():
     page_text = get_url_content(test_url)
 
     assert ref_html_text in page_text
+
+
+def test_verify_that_text_is_cleaned_ok():
+    with open('tests/data/ref_clean_text_wiki_poland.txt') as ref_clean_text_file:
+        expected_results = ref_clean_text_file.read()
+    with open('tests/data/ref_html_wiki_poland.txt') as test_html_file:
+        test_html_text = test_html_file.read()
+
+    clean_text = get_clean_text_from_html_content(test_html_text)
+
+    assert str(hash(expected_results)) == str(hash(clean_text))

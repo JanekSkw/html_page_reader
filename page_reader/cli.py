@@ -10,10 +10,10 @@ from .parser import get_url_content, get_clean_text_from_html_content, save_most
 def reader(page_url, verbose):
     """Program reads page content, removes html overhead, counts most common words and writes to file `results.txt`"""
     page_content = get_url_content(page_url)
-
+    clean_text = get_clean_text_from_html_content(page_content)
     if verbose:
         with open('page_content.txt', 'w') as file_handler:
             file_handler.write(page_content)
-
-    clean_text = get_clean_text_from_html_content(page_content)
+        with open('clean_text.txt', 'w') as file_handler:
+            file_handler.write(clean_text)
     save_most_common_words_to_file(clean_text)

@@ -5,7 +5,7 @@ from pathlib import Path
 
 import requests
 
-HTML_TAG_TOKEN = re.compile(r'(?:<.*?>)|(?:&#\d+?;)', re.DOTALL)
+HTML_TAG_TOKEN = re.compile(r'(?:<.*?>)|(?:&#\d+?;)|(?:&quot;)', re.DOTALL)
 EMPTY_CLEAN_TOKEN = re.compile(r'''[\s.;:,#{}()!@$?%*&/\\^"'\-_><+=\[\]]+''', re.DOTALL)
 JS_CONTENT_TOKEN = re.compile(r'(?s)\s*<script\b.*?</script>', re.DOTALL)
 CSS_CONTENT_TOKEN = re.compile(r'(?s)\s*<style\b.*?</style>', re.DOTALL)
